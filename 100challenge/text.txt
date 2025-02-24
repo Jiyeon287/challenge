@@ -1,7 +1,0 @@
-<<<<<<< HEAD
-This is my feature new commit in VS Code
-=======
-This is my another commit in VS Code
->>>>>>> main
-
-And commit 2! 
