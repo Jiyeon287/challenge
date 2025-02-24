@@ -1,0 +1,24 @@
+body {
+    /*center로 위치 바꾸기*/
+    text-align: center;
+    background-color: rgb(123, 227, 193);
+    color: #565252;
+}
+
+h1 {
+    font-family: 'Lexend', sans-serif;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    color: rgb(167, 1, 78);
+}
+
+a:hover{
+    text-decoration: underline;
+}

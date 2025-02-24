@@ -1,0 +1,57 @@
+h1 {
+    font-size: 50px;
+    margin : 12px 0;
+}
+
+/* #description {
+    margin-bottom: 36px;
+    font-size: 30px;
+} */
+
+header p {
+    margin-bottom: 36px;
+    font-size: 30px;
+}
+
+a {
+    background-color: blue;
+    border-radius: 5px;
+    color: white;
+    float: right; 
+    /* text-align: right; */
+}
+
+a:hover {
+    text-decoration: none;
+    color: black;
+}
+
+ol {
+    list-style: none;
+    width: 500px;
+    margin: 50px auto 0 auto;
+    padding: 0;
+
+}
+
+li {
+    background-color: white;
+    margin:32px;
+    padding: 8px;
+    border-radius: 6px;    
+}
+
+h2 {
+    color : rgb(15, 15, 124);
+    font-family: 'Roboto', sans-serif;
+}
+
+main p {
+    margin:12px;
+    color: black;
+}
+
+.highlight-goal {
+    background-color: rgb(217, 155, 155);
+
+}

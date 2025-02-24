@@ -1,0 +1,44 @@
+main {
+  width: 800px;
+  margin: 200px auto 100px auto;
+  background-color: rgb(0, 136, 255);
+  padding: 24px;
+  border: 3px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  box-shadow: 1px 1px 4px rgba(124, 121, 121, 0.5);    
+}
+
+body {
+  margin: 50px;
+}
+img {
+  height: 200px;
+  width: 200px;
+  border-radius: 100px;
+  background-color: rgb(157, 191, 232);
+  border: 3px solid #000000;
+  margin-top: -127px;
+}
+
+h1 {
+  font-size: 32px;
+  color: rgb(228, 223, 223);
+}
+
+span {
+  color: rgb(9, 52, 195);
+
+}
+#challenge-goal {
+  color: black;
+  font-size: 45px;
+  font-weight: bold;
+  /* background-color: rgb(0, 136, 255);
+  padding: 150px;
+  border: 3px solid rgb(0, 0, 0);
+  border-radius: 5px; */
+}
+
+footer {
+  color: black;
+}

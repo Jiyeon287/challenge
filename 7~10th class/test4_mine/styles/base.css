@@ -1,0 +1,22 @@
+main {
+  width: 800px;
+  margin: 200px auto 72px auto;
+}
+
+body {
+  margin: 50px;
+}
+img {
+  height: 200px;
+  width: 200px;
+  border-radius: 100px;
+  background-color: rgb(255, 255, 255);
+}
+#challenge-goal {
+  color: black;
+  font-size: 50px;
+  background-color: rgb(0, 136, 255);
+  padding: 150px;
+  border: 3px solid rgb(0, 0, 0);
+  border-radius: 5px;
+}
