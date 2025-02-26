@@ -22,11 +22,11 @@ header nav a:hover {
 
 main ul {
     width: 1200px;
-    margin: 0 auto 48px auto;
+    margin: 0 auto 2rem auto;
     /* GRID OPTION */
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px 20px;
+    gap: 1rem 1rem;
 }
 
 li:nth-of-type(3) {
@@ -42,13 +42,13 @@ main li {
 }
 
 main li img {
-    width: 300px;
-    height: 280px;
+    width: 18rem;
+    height: 17rem;
     object-fit: cover;
 }
 
 .item-content {
-    padding: 24px;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -64,7 +64,7 @@ main li img {
 
 .actions a {
     text-decoration: none;
-    padding: 6px;
+    padding: 0.3%;
     color: rbg(22,211,228);
     border-radius: 5px;
 }
