@@ -25,6 +25,14 @@ html {
   width: 350px;
   margin: 50px auto;
   box-shadow: 3px 3px 10px rgb(201, 200, 200);
+  transition: transform 0.5s ease-out;
+  /* transition: background-color 0.5s ease-out; */
+}
+
+.card-container:hover {
+   transform: scale(1.10);
+   /* background-color: blue; */
+   /* transform: rotate(180deg); */
 }
 
 h1 {
