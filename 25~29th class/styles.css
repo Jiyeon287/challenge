@@ -3,6 +3,11 @@ body {
     font-family: 'Roboto', sans-serif ;
 }
 
+h1 {
+    text-align: center;
+    color: white;
+}
+
 form {
     width: 30rem;
     margin: 3rem auto;
@@ -11,12 +16,19 @@ form {
     border-radius: 6px;
 }
 
+ul {
+  list-style: none;  
+  margin: 0;
+  padding: 0;
+    
+}
+
 label {
     margin-bottom: 0.5rem;
     display: block;
 }
 
-input { 
+input, textarea, select { 
     width: 100%;
     display: block;
     margin-bottom: 1rem;
@@ -25,12 +37,17 @@ input {
     border: 1px solid rgb(184,184,184);
 }
 
-input:focus {
+input:focus
+textarea:focus
+select:focus {
     background-color: rgb(219,190,253);
     color: rgb(116, 36, 207);
     border-color: rgb(41, 2, 85);
 }
 
+textarea {
+    resize: none;
+}
 button {
     display: block;
     font: inherit;
@@ -47,4 +64,13 @@ button {
 button:hover {
     background-color: black;
     border-color: rgb(219,190,253);
+}
+
+.form-control-inline {
+    display: flex;
+}
+
+.form-control-inline input {
+    width: auto;
+    margin-right: 0.5rem;
 }
