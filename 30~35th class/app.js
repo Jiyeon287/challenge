@@ -28,3 +28,17 @@ function getListItem(array, arrayIndex){
 }
 
 alert(getListItem(onlineCourse.goals,1));
+
+//메소드
+let person = {
+    name: 'Max', //객체
+    greet() { //함수
+        alert('Hello!'); 
+    }
+};
+
+person.greet();
+
+//log
+console.log('js 끝!');
+
