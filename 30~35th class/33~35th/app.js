@@ -8,12 +8,15 @@ console.dir(document);
 
 // document.body.children[1].children[0].href = 'https://google.com';
 
+//가져오는 방식 1
 let anchorElement = document.getElementById('external-link');
 anchorElement.href = 'https://google.com';
 
+//가져오는 방식 2
 anchorElement = document.querySelector('p a');
 anchorElement.href = 'https://www.naver.com';
 
+//new 
 let newAnchorElement = document.createElement('a');
 newAnchorElement.href = 'https://youtube.com';
 newAnchorElement.textContent = 'This leads to Google!';
