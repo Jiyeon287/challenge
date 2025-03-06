@@ -20,3 +20,5 @@ function retrieveUserInput(event) {
 }
 inputElement.addEventListener('input', retrieveUserInput);
 
+
+

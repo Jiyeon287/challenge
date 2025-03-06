@@ -3,11 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css">
     <title>Document</title>
-    <script src="app.js" defer></script>
+    <script src="demo.js" defer></script>
   </head>
   <body>
-    <p>Click me!</p>
-    <input type="text">
+    <form>
+      <div class="control">
+        <label for="product-name">Product Name</label>
+        <input
+          type="text"
+          name="product-name"
+          id="product-name"
+          maxlength="60"
+        />
+        <span id="charout"> <span id="remaining-chars">60</span>/60 </span>
+      </div>
+      <button>Submit</button>
+    </form>
   </body>
 </html>
