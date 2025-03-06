@@ -10,10 +10,12 @@ const secondButton = document.getElementById('second-button');
 //    The functions should "console.dir()" the clicked buttons.
 //    - Output the first button by using the variable in which it's stored
 //    - Output the second button WITHOUT using the variable in which it's stored
+//버튼에서 꺼내기
 function clickButton1() {
     console.dir(firstButton);
 }
 
+//event에서 꺼내기
 function clickButton2(event) {
     console.dir(event.target);
 }
@@ -26,8 +28,11 @@ secondButton.addEventListener('click', clickButton2);
 //    - Select BOTH paragraphs by drilling into the document and "navigating" to the
 //      mentioned elements
 //    - If you struggle with DOM drilling, use "ids" instead but watch the solution!
-let firstParagraphs = document.body.children[1]
+let firstParagraphs = document.body.children[2].children[1];
 console.log(firstParagraphs);
+let thirdParagraphs = firstParagraphs.nextElementSibling.nextElementSibling;
+console.log(thirdParagraphs);
+
 // let thirdParagraphs = document.body.children[]
 
 // 4) Change the functions from (2) such that:
