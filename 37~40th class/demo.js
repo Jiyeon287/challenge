@@ -15,9 +15,17 @@ function updateRemaingChars(event){
 
 
     //if문 추가
-    if(remaingChars <= 10) {
+    if(remaingChars === 0) {
+        remainingCharsElement.classList.add('error');
+        productNameInputElement.classList.add('error');
+    }else if(remaingChars <= 10){
+        remainingCharsElement.classList.remove('error');
+        productNameInputElement.classList.remove('error');
         remainingCharsElement.classList.add('warning');
         productNameInputElement.classList.add('warning');
+    }else{
+        remainingCharsElement.classList.remove('warning');
+        productNameInputElement.classList.remove('warning');
     }
 
 }
