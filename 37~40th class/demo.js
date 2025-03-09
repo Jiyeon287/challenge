@@ -13,6 +13,13 @@ function updateRemaingChars(event){
     console.log(enteredTextLength);
     remainingCharsElement.textContent = remaingChars;
 
+
+    //if문 추가
+    if(remaingChars <= 10) {
+        remainingCharsElement.classList.add('warning');
+        productNameInputElement.classList.add('warning');
+    }
+
 }
 
 productNameInputElement.addEventListener('input', updateRemaingChars);
