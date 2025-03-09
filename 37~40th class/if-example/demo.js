@@ -29,9 +29,13 @@ function updateRemaingChars(event){
     }
 
     //참과 거짓
+    let isPresent = true;
+    if(isPresent){ //Boolean값은 자체가 조건문에 사용가능, ! 추가도 가능
+        console.log('true!');
+    }
     const testStr = 'ssss';
 
-    if(testStr){
+    if(testStr){ //String값은 내용이 있으면 참, 띄어쓰기도 참, 아예 빈값이나 상수 0은 거짓을 의미
         console.log('testStr is ' + testStr);
     }
 
