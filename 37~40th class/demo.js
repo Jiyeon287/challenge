@@ -28,6 +28,13 @@ function updateRemaingChars(event){
         productNameInputElement.classList.remove('warning');
     }
 
+    //참과 거짓
+    const testStr = 'ssss';
+
+    if(testStr){
+        console.log('testStr is ' + testStr);
+    }
+
 }
 
 productNameInputElement.addEventListener('input', updateRemaingChars);
