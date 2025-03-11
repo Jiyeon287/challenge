@@ -20,3 +20,24 @@ function calculataSum(){
 buttonElement.addEventListener('click', calculataSum);
 
 
+////////////////////////////////////////////////////////////////////////////
+
+const buttonElemen2 = document.querySelector('#highlight-links button')
+
+function changeToBoldAtHerf(){
+
+
+    const hrefInParagraphList = document.querySelectorAll('#highlight-links a');
+
+    for(const hrefInParagraph of hrefInParagraphList) {
+        hrefInParagraph.classList.add('highlight');
+    }
+
+
+}
+
+buttonElemen2.addEventListener('click', changeToBoldAtHerf);
+
+
+
+
