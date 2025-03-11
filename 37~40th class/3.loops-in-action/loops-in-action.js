@@ -51,6 +51,9 @@ function getData(){
 
     const userDataUlElement = document.getElementById('output-user-data');
 
+    //이걸 추가하는 이유는 클릭을 몇번이고 해도 값을 초기화한다음에 li를 넣어야하기 때문(이걸 넣지 않으면 초기화되지 않고 같은 값이 계속 추가됨)
+    userDataUlElement.innerHTML = '';
+
     for(const userDataKey in dummyUserData) {
         console.log(userDataKey);
         //일단 원하는 값을 만들자
@@ -66,6 +69,51 @@ function getData(){
 
 buttonElemen3.addEventListener('click', getData);
 
+//////////////////////////////////////////////////////////////////////////////
+const buttonElemen4 = document.querySelector('#statistics button');
+
+//주사위를 굴리는 함수
+function rollTheDice(){
+    return Math.floor(Math.random() * 6) +1; //random() -> 0~1사이의 무작위 숫자 floor() -> 소수점 떼고 반내림한 수
+}
+
+//같은 수가 나올 확률을 구하는 함수
+function deriveNumberForDice(){
+
+    //타겟 넘버
+    const targetNumberElement = document.getElementById('user-target-number');
+    const targetNumber = targetNumberElement.value;
+
+    //실제로 주사위를 1번씩 굴렸을 때 결과 List(ul)
+    const diceRollsListElement = document.getElementById('dice-rolls');
+    diceRollsListElement.innerHTML = '';
+
+    let isSameRolledTargetNumber = false;
+
+    let countRoll = 0;
+
+    //주사위를 굴리면서 같은 값 찾는 while문
+    while(!isSameRolledTargetNumber){
+        //true인 경우 while 돌다가 내부에서 true가 나오면 조건문은 false가 되기 때문에 끝남
+        const rolledNumber = rollTheDice();
+        // if(rolledNumber == targetNumber) hasRolledTargetNumber = true;
+        isSameRolledTargetNumber = rolledNumber == targetNumber;
+        countRoll++;
+
+        const newRollListElement = document.createElement('li');
+        const rollListOutput = 'Roll ' + countRoll + ": " + rolledNumber;
+        newRollListElement.textContent = rollListOutput;
+        diceRollsListElement.append(newRollListElement);
+
+    }
+
+    //output 작성
+    const totalCountRollElement = document.getElementById('output-total-rolls');
+    totalCountRollElement.textContent = countRoll;
+    const outPutTargetNumberElement = document.getElementById('output-target-number');
+    outPutTargetNumberElement.textContent = targetNumber;
 
 
+}
 
+buttonElemen4.addEventListener('click', deriveNumberForDice);
