@@ -38,6 +38,34 @@ function changeToBoldAtHerf(){
 
 buttonElemen2.addEventListener('click', changeToBoldAtHerf);
 
+//////////////////////////////////////////////////////////////////////////////
+const buttonElemen3 = document.querySelector('#user-data button');
+
+function getData(){
+
+    const dummyUserData = {
+        firstName: 'jiyeon',
+        lastName: 'Kim',
+        age : 29
+    };
+
+    const userDataUlElement = document.getElementById('output-user-data');
+
+    for(const userDataKey in dummyUserData) {
+        console.log(userDataKey);
+        //일단 원하는 값을 만들자
+        const outputText = userDataKey.toUpperCase() + ': ' + dummyUserData[userDataKey];
+        //ul내에 li요소를 만들자
+        const newLiElement = document.createElement('li');
+        //li에 값을 넣자
+        newLiElement.textContent = outputText;
+        //우리가 원래 추가하려고 했던 Ul 요소에 li요소를 추가하자
+        userDataUlElement.append(newLiElement);
+    }
+}
+
+buttonElemen3.addEventListener('click', getData);
+
 
 
 
