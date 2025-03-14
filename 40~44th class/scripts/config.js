@@ -6,6 +6,8 @@ function openPlayerConfig() {
 function closePlayerConfig() {
   playerConfigOverlayElement.style.display = 'none';
   backdropElement.style.display = 'none';
+  formElement.firstElementChild.classList.remove('error');
+  errorsOutputElement.textContent = '';
 }
 
 function savePlayerConfig(event) {
@@ -17,8 +19,9 @@ function savePlayerConfig(event) {
 
   //html에서 required를 js로 변환가능
   if(!enteredPlayername) { // enteredPlayername === ''
-    errorsOutputElement.textContent = 'Please enter a valid name!'
-
+    event.target.firstElementChild.classList.add('error');
+    errorsOutputElement.textContent = 'Please enter a valid name!';
+    return;
   }
 
 
