@@ -1,4 +1,5 @@
-function openPlayerConfig() {
+function openPlayerConfig(event) {
+  editedPlayer = event.target.dataset.playerid;  // 1 or 2
   playerConfigOverlayElement.style.display = 'block';
   backdropElement.style.display = 'block';
 }
@@ -8,6 +9,7 @@ function closePlayerConfig() {
   backdropElement.style.display = 'none';
   formElement.firstElementChild.classList.remove('error');
   errorsOutputElement.textContent = '';
+  formElement.firstElementChild.lastElementChild.value = '';
 }
 
 function savePlayerConfig(event) {
@@ -24,6 +26,12 @@ function savePlayerConfig(event) {
     return;
   }
 
+  //오버레이의 이름 -> 사이트의 이름 반영
+  const updatePlayerDataElement = document.getElementById('player-' + editedPlayer + '-data'); //동적으로 선택
+  updatePlayerDataElement.children[1].textContent = enteredPlayername; // PLAYER NAME
 
+  players[editedPlayer -1].name = enteredPlayername; //배열은 0,1이고 player는 1,2기 때문에
+
+  closePlayerConfig();
 
 }
