@@ -30,14 +30,14 @@ function selectGameField(event) {
     alert("Please");
     return;
   }
-  selectedField.textContext = players[activePlayer].symbol; // 초기값 players[0]
-  console.log(event.target.name + players[activePlayer].symbol);
+  selectedField.textContent = players[activePlayer].symbol; // 초기값 players[0]
   event.target.classList.add("disabled");
 
   gameData[selectedRow][selectedColumn] = activePlayer + 1;
   console.log(gameData);
 
   const winnerId = checkWin();
+  currentRound++;
   switchPlayer();
 }
 
@@ -79,7 +79,7 @@ function checkWin(player) {
     return gameData[0][2];
   }
 
-  if (currentRoudn === 9){
+  if (currentRound === 9){
     return -1;
   }
   return 0;
