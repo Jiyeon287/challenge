@@ -27,9 +27,14 @@ function selectGameField(event){
 
     const selectedField = event.target;
 
-    // selectedField.textContent = players[]
-    event.target.textContext = players[activePlayer].symbol; // 초기값 players[0]
+    selectedField.textContext = players[activePlayer].symbol; // 초기값 players[0]
     console.log(event.target.name + players[activePlayer].symbol);
     event.target.classList.add('disabled');
+
+    const selectedColumn = selectedField.dataset.col - 1;
+    const selectedRow = selectedField.dataset.row - 1;
+
+    gameData[selectedRow][selectedColumn] = activePlayer + 1;
+    console.log(gameData);
     switchPlayer();
 }
