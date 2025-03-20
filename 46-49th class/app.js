@@ -1,21 +1,17 @@
-const userName = "jykim";
-console.log(userName);
+const express = require('express');
 
-const http = require("http");
+const app = express();
+
+app.get('/currenttime', function (request, response){
+  response.send("<h1>"+ new Date().toISOString() +"</h1>");
+
+})
+
+app.get('/', function (request, response){
+  response.send("<h1>Hello World!</h1>");
+
+})
+
+app.listen(3000);
 
 
-function handleRequest(request, response) {
-  if (request.url === "/cureenttime") {
-    response.statusCode = 200;
-    response.end("<h1>"+ new Date().toISOString() +"</h1>");
-  } else if (request.url === "/") {
-    response.statusCode = 200;
-    response.end("<h1>Hello World!</h1>");
-  }
-}
-
-const server = http.createServer(handleRequest);
-
-server.listen(3000);
-
-//3000포트의 서버를 리슨
