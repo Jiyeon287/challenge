@@ -1,1 +1,9 @@
-[{"name":"pizza","address":"seoul","cuisine":"Italian","website":"https://pizza.com","description":"it's very delicious!"}]
+[
+  {
+    "name": "pizza",
+    "address": "seoul",
+    "cuisine": "Italian",
+    "website": "https://pizza.com",
+    "description": "it's very delicious!"
+  }
+]
