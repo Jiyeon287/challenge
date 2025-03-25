@@ -11,7 +11,7 @@ function getStoredRestaurants() {
 }
 
 function storeRestaurants(storableRestaurants) {
-    fs.writeFileSync(filePath, JSON.stringify(storedRestaurants));
+    fs.writeFileSync(filePath, JSON.stringify(storableRestaurants));
 }
 
 module.exports = {

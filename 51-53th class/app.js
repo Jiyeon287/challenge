@@ -58,9 +58,9 @@ app.post("/recommend", function (req, res) {
   const restaurant = req.body;
   restaurant.id = uuid.v4(); //자바스크립트는 기존에 존재하지 않는 속성을 불러오면 자동으로 생성하는 기능을 가짐
   const storedRestaurants = resData.getStoredRestaurants();
-
   storedRestaurants.push(restaurant);
-  resData.storedRestaurants(storedRestaurants);
+  resData.storeRestaurants(storedRestaurants);
+  console.log("dd");
   res.redirect("/confirm");
 });
 
