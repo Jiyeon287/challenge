@@ -1,6 +1,7 @@
 const path = require("path");
 const fs = require("fs");
 const express = require("express");
+const uuid = require('uuid');
 
 const app = express();
 
@@ -25,6 +26,13 @@ app.get("/restaurants", function (req, res) {
   });
 });
 
+app.get('/restaurants/:id', function (req, res){ 
+  //디테일 페이지 : restaurants/[restaurantID]
+  const restaurantId = req.params.id;
+  console.log(restaurantId);
+  res.render('restaurant-detail', {rid: restaurantId});
+});
+
 app.get("/confirm", function (req, res) {
   res.render("confirm");
 });
@@ -39,6 +47,7 @@ app.get("/recommend", function (req, res) {
 
 app.post("/recommend", function (req, res) {
   const restaurant = req.body;
+  restaurant.id = uuid.v4(); //자바스크립트는 기존에 존재하지 않는 속성을 불러오면 자동으로 생성하는 기능을 가짐
   const filePath = path.join(__dirname, "data", "restaurants.json");
   const fileData = fs.readFileSync(filePath);
   const storedRestaurants = JSON.parse(fileData);
@@ -47,5 +56,7 @@ app.post("/recommend", function (req, res) {
   fs.writeFileSync(filePath, JSON.stringify(storedRestaurants));
   res.redirect("/confirm");
 });
+
+
 
 app.listen(3000);
