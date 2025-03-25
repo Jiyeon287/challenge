@@ -29,8 +29,16 @@ app.get("/restaurants", function (req, res) {
 app.get('/restaurants/:id', function (req, res){ 
   //디테일 페이지 : restaurants/[restaurantID]
   const restaurantId = req.params.id;
-  console.log(restaurantId);
-  res.render('restaurant-detail', {rid: restaurantId});
+  const filePath = path.join(__dirname, "data", "restaurants.json");
+  const fileData = fs.readFileSync(filePath);
+  const storedRestaurants = JSON.parse(fileData);
+
+  for (const restaurant of storedRestaurants) {
+    console.log(restaurant.id);
+    if(restaurant.id === restaurantId) {
+      return res.render('restaurant-detail', {restaurant: restaurant});
+    }
+  }
 });
 
 app.get("/confirm", function (req, res) {
