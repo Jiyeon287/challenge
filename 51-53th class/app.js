@@ -3,6 +3,8 @@ const fs = require("fs");
 const express = require("express");
 const uuid = require('uuid');
 
+const resData = require('./util/restaurant-data');
+
 const app = express();
 
 app.set("views", path.join(__dirname, "views"));
@@ -16,9 +18,7 @@ app.get("/", function (req, res) {
 });
 
 app.get("/restaurants", function (req, res) {
-  const filePath = path.join(__dirname, "data", "restaurants.json");
-  const fileData = fs.readFileSync(filePath);
-  const storedRestaurants = JSON.parse(fileData);
+  const storedRestaurants = resData.getStoredRestaurants();
 
   res.render("restaurants", {
     numberOfRestaurants: storedRestaurants.length,
@@ -29,9 +29,7 @@ app.get("/restaurants", function (req, res) {
 app.get('/restaurants/:id', function (req, res){ 
   //디테일 페이지 : restaurants/[restaurantID]
   const restaurantId = req.params.id;
-  const filePath = path.join(__dirname, "data", "restaurants.json");
-  const fileData = fs.readFileSync(filePath);
-  const storedRestaurants = JSON.parse(fileData);
+  const storedRestaurants = resData.getStoredRestaurants();
 
   for (const restaurant of storedRestaurants) {
     console.log(restaurant.id);
@@ -40,7 +38,7 @@ app.get('/restaurants/:id', function (req, res){
     }
   }
 
-  res.render('404');
+  res.status(404).render('404');
 
 });
 
@@ -59,18 +57,22 @@ app.get("/recommend", function (req, res) {
 app.post("/recommend", function (req, res) {
   const restaurant = req.body;
   restaurant.id = uuid.v4(); //자바스크립트는 기존에 존재하지 않는 속성을 불러오면 자동으로 생성하는 기능을 가짐
-  const filePath = path.join(__dirname, "data", "restaurants.json");
-  const fileData = fs.readFileSync(filePath);
-  const storedRestaurants = JSON.parse(fileData);
+  const storedRestaurants = resData.getStoredRestaurants();
 
   storedRestaurants.push(restaurant);
-  fs.writeFileSync(filePath, JSON.stringify(storedRestaurants));
+  resData.storedRestaurants(storedRestaurants);
   res.redirect("/confirm");
 });
 
+//그 어떤 링크가 존재하지 않을 때 여기까지 내려옴 -> 404 페이지를 찾을 수 없습니다.
 app.use(function(req, res){
-  res.render('404');
+  res.status(404).render('404');
 });
+
+app.use(function(error, req, res, next){
+  res.status(500).render('500');
+});
+
 
 
 app.listen(3000);
