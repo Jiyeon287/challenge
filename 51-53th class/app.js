@@ -39,6 +39,9 @@ app.get('/restaurants/:id', function (req, res){
       return res.render('restaurant-detail', {restaurant: restaurant});
     }
   }
+
+  res.render('404');
+
 });
 
 app.get("/confirm", function (req, res) {
@@ -65,6 +68,9 @@ app.post("/recommend", function (req, res) {
   res.redirect("/confirm");
 });
 
+app.use(function(req, res){
+  res.render('404');
+});
 
 
 app.listen(3000);
