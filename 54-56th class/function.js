@@ -41,7 +41,7 @@ function sumUp4(...numbers){
 
 console.log("sumUp4 : " + sumUp4(1,2));
 
-function sumUp5(...numbers){
+function sumUp5(...numbers){ //Rest operater
     let result = 0;
 
     for (const number of numbers){
@@ -51,7 +51,21 @@ function sumUp5(...numbers){
     return result;
 }
 
-const inputNumbers = [1,2,3,4,5]
+const inputNumbers = [1,2,3,4,5];
 
-console.log("sumUp5 : " + sumUp5(...inputNumbers));
+console.log("sumUp5 : " + sumUp5(...inputNumbers)); //Spread operator
+
+
+function test(userName){
+    console.log(`hi
+
+        hello
+
+        it's me`);
+    
+    console.log(`${userName}`);
+    
+}
+
+test('jykim');
 
